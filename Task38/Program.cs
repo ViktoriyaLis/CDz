@@ -57,4 +57,4 @@ int number = getUserData("Введите количество элементов
 int [] array = generateArray(number, 1, 99);
 int Difference = MaxMinDifferents(array);
 printArray(array);
-Console.Write($"Разница между максимальным и минимальным элементом массива равна {Difference}");
+Console.Write($"Разница между максимальным и минимальным элементами массива равна {Difference}");

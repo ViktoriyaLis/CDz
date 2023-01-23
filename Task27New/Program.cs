@@ -25,4 +25,4 @@ int GetDigitSum (int Number)
 }
 int sum = GetDigitSum (num);
 
-Console.WriteLine ($"Сумма цифр в числе {num} равно {sum} ");
+Console.WriteLine ($"Сумма цифр в числе равно {sum} ");

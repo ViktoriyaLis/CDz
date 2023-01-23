@@ -3,48 +3,26 @@
 82 -> 10
 9012 -> 12//
 */
-int GetUserData (string message)
+int GetUserNumber(string message)
 {
-    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(message);
-    Console.ResetColor();
-    int UserData = int.Parse (Console.ReadLine()!);
-    return UserData;
+    int UserNumber = int.Parse(Console.ReadLine()!);
+    return UserNumber;
 }
-int sum = 0;
-int FindDigit (int sum)
+int num = GetUserNumber("Введите число");
+
+int GetDigitSum (int Number)
+
 {
-    
-    int digit = 0;
-    while (digit >=0)
+    int sum = 0;
+    while (num>=1)  
     {
-        digit = digit / 10;
-        digit++;
-    }
-    if (num > digit)
-    {
-        for (int i = 1; i<= num; i++)
-        {
-            sum += digit;
-        }
+    int digit  = num %10;
+    num = num/10;
+    sum += digit;
     }
     return sum;
 }
+int sum = GetDigitSum (num);
 
-
-//int GetSumDigit(int num)
-{
-    
-    int sum = 0;
-    for (int i = 1; i<= num; i++)
-    {
-        temp += digit;
-    }
-    return temp;
-}
-
-int num = GetUserData("Введите число");
-int cifra = FindDigit(sum);
-//int result = GetSumDigit (temp);
-Console.WriteLine($"Сумма цифр в {num} = {cifra}");
-
+Console.WriteLine ($"Сумма цифр в числе равно {sum} ");
