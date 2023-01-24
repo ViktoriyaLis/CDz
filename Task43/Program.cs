@@ -21,26 +21,18 @@ int b1 = getUserData ("Введите значение b1: ");
 int k1 = getUserData ("Введите значение k1: ");
 int b2 = getUserData ("Введите значение b2: ");
 int k2 = getUserData ("Введите значение k2: ");
-int x = 0;
-int y = 0;
-x = (-b2 + b1)/(-k1 + k2);
-y = k2 * x + b2;
+int x = (-b1 + b2) / (-k1 + k2); 
+int y = k1 * x + b1;
+Console.WriteLine($"точка пересечения прямых в точке ({x}; {y})");
+
 void DotsPoint (int b1, int k1, int b2, int k2)
 {
-
     if(k1==k2 && b1==b2)
     {
         Console.WriteLine("прямые равны");
     }
-    else if(k1==k2)
+    else if (k1==k2)
     {
         Console.WriteLine("прямые параллельны");
     }
-    else
-    {
-        int x = (-b1 + b2) / (k1 - k2);
-        int y = k1 * x + b1;
-        Console.WriteLine($"точка пересечения ({x}; {y})");
-    }
 }
-DotsPointResult = DotsPoint(b1,k1,b2,k2);
