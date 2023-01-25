@@ -24,16 +24,16 @@ for (int i = 0; i < lenght; i++)
 
 int PositiveNumbers(int [] array)
 {
-    int lenght = 0;
+    int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array [i] > 0)
         {
-            lenght++;
+            count++;
         }
     }
-    return lenght;
+    return count;
 }
 
-int positiveNumbersLenght = PositiveNumbers(numbers);
-Console.WriteLine($"Количество чисел больше 0 равно {positiveNumbersLenght}");
+int positiveNumbersCount = PositiveNumbers(numbers);
+Console.WriteLine($"Количество чисел больше 0 равно {positiveNumbersCount}");
