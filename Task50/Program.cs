@@ -3,7 +3,7 @@
 1 4 7 2
 5 9 2 3
 8 4 2 4
-1 7 -> такого элемента в массиве нет
+17 -> такого элемента в массиве нет
 */
 
 int [,] generate2DDoubleArray (int colLength, int rowLength, int start, int finish)
@@ -27,43 +27,29 @@ int GetUserData (string message)
     return UserData;
 }
 
-void FindElementsInCol (int m, int [,] array)
+void FindElements (int m, int n, int [,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        int result1=0;
-        if (m == i)
+        if (m < array.GetLength(0))
         {
-            result1+=i;
-            Console.WriteLine($"Искомый элемент {m} находится в {i} столбце массива");
+           Console.WriteLine($"Искомый элемент {m} есть в массиве");
         }
         else
         {
-            Console.WriteLine($"Искомого элемента {m} в столбцах этого массива нет");
+            Console.WriteLine($"Искомого элемента {m} в массиве нет");
         } 
-        
-    }
-}
-void FindElementsInRow (int n, int [,] array)
-{
-    for (int j = 0; j < array.GetLength(1); j++)
+        if (n > array.GetLength(1))
         {
-            int result2=0; 
-            if (n==j)
-            {
-                result2=j;
-                Console.WriteLine($"Искомый элемент {n} находится в {j} строке массива");
-            }
-            else
-            {
-                Console.WriteLine($"Искомого элемента {n} в строках этого массива нет");
-            }
-            
+           Console.WriteLine($"Искомый элемент {n} есть в массиве");
         }
-       
+        else
+        {
+            Console.WriteLine($"Искомого элемента {n} в массиве нет");
+        } 
+    }
 }
 int [,] array = generate2DDoubleArray (5,5,0,100);
 int m = GetUserData ("Введите искомую строку");
 int n = GetUserData ("Введите искомый столбец");
-FindElementsInCol(m,i);
-FindElementsInRow(n,j);
+FindElements(m,n,array);
