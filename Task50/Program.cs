@@ -26,30 +26,47 @@ int GetUserData (string message)
     int UserData = int.Parse (Console.ReadLine()!);
     return UserData;
 }
-
-void FindElements (int m, int n, int [,] array)
+/*void printInColor(string data)
+{
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.Write(data);
+    Console.ResetColor();
+}
+*/
+void print2DArray (int[,]array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        if (m < array.GetLength(0))
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-           Console.WriteLine($"Искомый элемент {m} есть в массиве");
+            Console.Write(array[i,j] + " \t");
         }
-        else
-        {
-            Console.WriteLine($"Искомого элемента {m} в массиве нет");
-        } 
-        if (n > array.GetLength(1))
-        {
-           Console.WriteLine($"Искомый элемент {n} есть в массиве");
-        }
-        else
-        {
-            Console.WriteLine($"Искомого элемента {n} в массиве нет");
-        } 
+        Console.WriteLine();
     }
 }
-int [,] array = generate2DDoubleArray (5,5,0,100);
-int m = GetUserData ("Введите искомую строку");
-int n = GetUserData ("Введите искомый столбец");
-FindElements(m,n,array);
+void FindElement (int m, int [,] array)
+{
+    
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (m == array [i,j])
+            {
+                int result = 0;
+                result+= array[i,j];
+                Console.WriteLine($"Элемент находится в {i} строке, в {j} столбце");
+            }
+            Console.WriteLine($"Искомого элемента {m} в массиве нет");
+            
+             
+        }  
+    }
+    
+}
+ 
+int [,] array = generate2DDoubleArray (3,5,0,10);
+int m = GetUserData ("Введите искомый элемент");
+print2DArray(array);
+FindElement(m,array);
