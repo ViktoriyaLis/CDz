@@ -6,7 +6,7 @@
 18 20
 15 18
 */ 
-void printInColor(string data)
+/*void printInColor(string data)
 {
     Console.ForegroundColor = ConsoleColor.Magenta;
     Console.Write(data);
